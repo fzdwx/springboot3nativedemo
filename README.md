@@ -11,4 +11,7 @@ run:
 
 ```sh
 ./gradlew nativeCompile && ./build/native/nativeCompile/springboot3nativedemo
+curl  http://localhost:8080/fzdwx
 ```
+
+看了下，打包出来的文件还是很大，有60m。对比 golang 来说还是有一定差距。

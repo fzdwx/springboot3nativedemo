@@ -3,6 +3,7 @@ package com.example.springboot3nativedemo;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
@@ -13,9 +14,8 @@ public class Springboot3nativedemoApplication {
         SpringApplication.run(Springboot3nativedemoApplication.class, args);
     }
 
-
-    @GetMapping
-    String helloWorld() {
-        return "Hello World";
+    @GetMapping("/{name}")
+    String helloWorld(@PathVariable String name) {
+        return "Hello <span style='color: red'>%s</span>, welcome to <i>native</i> world!".formatted(name);
     }
 }
